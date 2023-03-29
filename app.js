@@ -16,7 +16,7 @@ app.set('views', path.join(__dirname, 'views')); // Sets the views directory
 // GET REQUEST
 app.get('/', (req, res)=>{
     const params = {}
-    res.statusCode(200).render('index.pug', params);
+    res.status(200).render('index.pug', params);
 })
 
 // START SERVER
