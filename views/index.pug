@@ -5,5 +5,32 @@ html
     style
       include ../static/style.css
   body
+    nav#navbar
+        ul
+            //- syntax for nested tags/attributes
+            li #[a(href = "/") Home]
+            li #[a(href = "/") About]
+            li #[a(href = "/") Services]
+            li #[a(href = "/") Info]
+            li #[a(href = "/") Contact Us]
+  
+    section#introSection
+      div#container_text
+        div#head Let's share our life with others.
+        div#subhead Donate food, clothes, books to needy ones.
+      div#container_image
+    section#donationSection
+      h2 Donations Accepted 
+      div.card
+        h3 Food
+      div.card
+        h3 Clothes
+      div.card
+        h3 Books 
+    section#partnersSection
+      div Our Partners
+    footer#footer 
+      | Footer Section
+
     script
       include ../static/index.js

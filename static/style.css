@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* NAVBAR */
+#navbar{
+    background-color: rgba(254,244,242,255);
+    padding: 12px 14px;
+    height: 70px;
+
+    display: flex;
+    position: relative;
+}
+
+#navbar::before{
+    content: "";
+    background-color: rgba(254,244,242,255);
+    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    
+    top: 0px;
+    left: 0px;
+
+    /* z-index set to -1 inorder to stack this strip below navbar */
+    z-index: -1;
+    opacity: 1;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+#navbar li{
+    list-style: none;
+}
+
+#navbar li a{
+    text-decoration: none;
+    padding: 15px 35px;
+    font-family: 'Rubik', sans-serif;                                                
+    font-size: 1.2rem;
+}
+
+/* INTRO SECTION */
+#introSection{
+    
+    height: 600px;
+    background-color: white;
+    
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#introSection div#container_text{
+    font-family: 'Rubik', sans-serif;                                                
+    margin: 20px;
+    width: 50%;
+    height: 100%;
+}
+
+#introSection div#container_image{
+    background: center / 80% no-repeat url("/static/images/donation.PNG");
+    margin: 20px;
+    width: 50%;
+    height: 100%;
+}
+
+#introSection div#head{
+    color: black;
+    font-size: 3rem;
+    padding: 20px;
+    font-weight: 400;
+}
+
+#introSection div#subhead{
+    color: black;
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
+#introSection div#container{
+    height: 600px;
+    width: 50%;
+    
+}
+
+/* DONATION SECTION */
+#donationSection{
+    height: 500px;
+    background-color: rgba(254,244,242,255);
+}
+
+#donationSection h2{
+    font-family: 'Rubik', sans-serif;                                                
+    color: black;
+    font-size: 2rem;
+    padding: 20px;
+    font-weight: 400;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#donationSection h3{
+    font-family: 'Rubik', sans-serif;                                                
+    color: black;
+    font-size: 1.5rem;
+    padding: 20px;
+    font-weight: 400;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card{
+    display: inline-block;
+    border: 2px solid black;
+    width: 30%;
+    margin: 20px;
+    height: 350px;
+}
+
+/* PARTNERS SECTION */
+#partnersSection{
+    height: 300px;
+    background-color: white;
+}
+
+#partnersSection div{
+    font-family: 'Rubik', sans-serif;                                                
+    color: black;
+    font-size: 2rem;
+    padding: 20px;
+    font-weight: 400;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* FOOTER */
+#footer{
+    height: 100px;
+    background-color: plum;
+}
