@@ -6,30 +6,19 @@
     padding: 0;
 }
 
+/* -------------------------------------------- */
+
 /* NAVBAR */
 #navbar{
     background-color: rgba(254,244,242,255);
-    padding: 12px 14px;
-    height: 70px;
+    padding: 5px 14px;
 
     display: flex;
-    position: relative;
 }
 
-#navbar::before{
-    content: "";
-    background-color: rgba(254,244,242,255);
-    
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    
-    top: 0px;
-    left: 0px;
-
-    /* z-index set to -1 inorder to stack this strip below navbar */
-    z-index: -1;
-    opacity: 1;
+#navbar #logo{
+    display: flex;
+    height: 70px;
 }
 
 #navbar ul{
@@ -41,14 +30,27 @@
 
 #navbar li{
     list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #navbar li a{
     text-decoration: none;
     padding: 15px 35px;
     font-family: 'Rubik', sans-serif;                                                
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+/* -------------------------------------------- */
 
 /* INTRO SECTION */
 #introSection{
@@ -95,6 +97,8 @@
     
 }
 
+/* -------------------------------------------- */
+
 /* DONATION SECTION */
 #donationSection{
     height: 500px;
@@ -133,6 +137,8 @@
     height: 350px;
 }
 
+/* -------------------------------------------- */
+
 /* PARTNERS SECTION */
 #partnersSection{
     height: 300px;
@@ -151,8 +157,10 @@
     justify-content: center;
 }
 
+/* -------------------------------------------- */
+
 /* FOOTER */
 #footer{
-    height: 100px;
+    height: 50px;
     background-color: plum;
 }

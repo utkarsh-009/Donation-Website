@@ -7,12 +7,14 @@ html
   body
     nav#navbar
         ul
-            //- syntax for nested tags/attributes
-            li #[a(href = "/") Home]
-            li #[a(href = "/") About]
-            li #[a(href = "/") Services]
-            li #[a(href = "/") Info]
-            li #[a(href = "/") Contact Us]
+          div#logo
+            img(src="/static/images/logo.png")
+          //- syntax for nested tags/attributes
+          li #[a(href = "/") Home]
+          li #[a(href = "/") About]
+          li #[a(href = "/") Services]
+          li #[a(href = "/") Info]
+          li #[a(href = "/") Contact Us]
   
     section#introSection
       div#container_text
