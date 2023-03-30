@@ -4,6 +4,7 @@
     margin: 0;
     box-sizing: border-box;
     padding: 0;
+    font-family: 'Rubik', sans-serif;                                                
 }
 
 /* ---------------------------------------------------------------------------------------- */
@@ -38,7 +39,6 @@
 #navbar li a{
     text-decoration: none;
     padding: 15px 35px;
-    font-family: 'Rubik', sans-serif;                                                
     font-size: 1.3rem;
 }
 
@@ -105,7 +105,6 @@
 }
 
 #donationSection h2{
-    font-family: 'Rubik', sans-serif;                                                
     color: black;
     font-size: 2rem;
     padding: 20px;
@@ -117,7 +116,6 @@
 }
 
 #donationSection h3{
-    font-family: 'Rubik', sans-serif;                                                
     color: black;
     font-size: 1.5rem;
     padding: 20px;
@@ -136,16 +134,25 @@
     height: 350px;
 }
 
-.card-box{
-    height: 300px;
-
-}
-
 .card-img{
     display: flex;
     height: 200px;
     width: 60%;
 }
+
+.card-box{
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.card-box h4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 /* ---------------------------------------------------------------------------------------- */
 
@@ -156,7 +163,6 @@
 }
 
 #partnersSection div{
-    font-family: 'Rubik', sans-serif;                                                
     color: black;
     font-size: 2rem;
     padding: 20px;
