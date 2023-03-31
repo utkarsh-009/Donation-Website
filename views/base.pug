@@ -1,0 +1,23 @@
+//- base.pug (basic layout of page)
+
+doctype html
+html
+  head
+    title Donation Site
+    block scripts
+    block style
+  body
+    nav#navbar
+        ul
+          div#logo
+            img(src="/static/images/logo.png")
+          //- syntax for nested tags/attributes
+          li #[a(href = "/") Home]
+          li #[a(href = "/") About]
+          li #[a(href = "/") Services]
+          li #[a(href = "/") Info]
+          li #[a(href = "/") Contact Us]
+    block content
+    footer#footer 
+      | Copyright &copy; www.donate-your-love.com | All Rights Reserved
+        

@@ -1,21 +1,14 @@
-//- index.pug (template from 'Includes' in pug documentation 'Including Plain Text')
-doctype html
-html
-  head
+//- inherting template layout from base.pug
+extends base.pug
+
+block scripts
+    script(src='/static/index.js')
+
+block style 
     style
       include ../static/style.css
-  body
-    nav#navbar
-        ul
-          div#logo
-            img(src="/static/images/logo.png")
-          //- syntax for nested tags/attributes
-          li #[a(href = "/") Home]
-          li #[a(href = "/") About]
-          li #[a(href = "/") Services]
-          li #[a(href = "/") Info]
-          li #[a(href = "/") Contact Us]
-  
+
+block content
     section#introSection
       div#container_text
         div#head Let's share our life with others.
@@ -48,6 +41,3 @@ html
         img(src="static/images/wipro.PNG" class="partners-img")
         img(src="static/images/tesla.PNG" class="partners-img")
         img(src="static/images/boa.PNG" class="partners-img")
-
-    script
-      include ../static/index.js
