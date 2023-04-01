@@ -9,10 +9,11 @@ block style
 block content 
     div#container
         h1 Contact Us
-        form(action="/contact", method="post", class="myForm")
+        //- post method has been added to get post req and res
+        form(action="/contact", method="post", class="myForm") 
             input(type="text", class="myInput", name="name", placeholder="Enter Your Name") 
             input(type="phone", class="myInput", name="phone", placeholder="Enter Your Phone No") 
-            input(type="email", class="myInput", name="name", placeholder="Enter Your Email") 
+            input(type="email", class="myInput", name="email", placeholder="Enter Your Email") 
             input(type="text", class="myInput", name="add", placeholder="Enter Your Address") 
             input(type="text", class="myInput", name="query", placeholder="Enter Your Query")
             button(class="btn") 
