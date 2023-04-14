@@ -1,15 +1,19 @@
 // Importing external modules and initialising variables
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = 8000;
+const port = process.env.port || 8000;
 const bodyparser = require('body-parser')
 const mongoose = require('mongoose');
+
+// To avoid unessecary warnings
+mongoose.set('strictQuery', false);
 
 // MONGOOSE SPECIFIC STUFF
 main().catch(err => console.log(err));
 // const connectionParams = {useNewUrlParser: true, useUnifiedTopology: true};
-async function main() {await mongoose.connect('mongodb+srv://utkarshpatil2001:XoSxLRyp9iJeLy9L@cluster0.6driqbj.mongodb.net/formContacts', {useNewUrlParser: true}, {useUnifiedTopology: true});}
+async function main() {await mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true}, {useUnifiedTopology: true});}
 
 // DEFINING MONGOOSE SCHEMA 
 const contactSchema = new mongoose.Schema({
@@ -63,3 +67,7 @@ app.post('/contact',(req,res)=>{
 app.listen(port, ()=>{
     console.log(`This application started successfully on port ${port}`);
 })
+
+
+
+// 'mongodb+srv://utkarshpatil2001:XoSxLRyp9iJeLy9L@cluster0.6driqbj.mongodb.net/formContacts'
