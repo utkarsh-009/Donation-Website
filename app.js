@@ -8,7 +8,8 @@ const mongoose = require('mongoose');
 
 // MONGOOSE SPECIFIC STUFF
 main().catch(err => console.log(err));
-async function main() {await mongoose.connect('mongodb://127.0.0.1:27017/donationContacts');}
+// const connectionParams = {useNewUrlParser: true, useUnifiedTopology: true};
+async function main() {await mongoose.connect('mongodb+srv://utkarshpatil2001:XoSxLRyp9iJeLy9L@cluster0.6driqbj.mongodb.net/formContacts', {useNewUrlParser: true}, {useUnifiedTopology: true});}
 
 // DEFINING MONGOOSE SCHEMA 
 const contactSchema = new mongoose.Schema({
