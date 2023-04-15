@@ -13,7 +13,19 @@ mongoose.set('strictQuery', false);
 // MONGOOSE SPECIFIC STUFF
 main().catch(err => console.log(err));
 // const connectionParams = {useNewUrlParser: true, useUnifiedTopology: true};
-async function main() {await mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true}, {useUnifiedTopology: true});}
+// async function main() {await mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true}, {useUnifiedTopology: true});}
+
+const connectDB = async ()=>{
+    try {
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(`Mongoose DB connected: ${conn.connection.host}`);
+    }
+    catch(error)
+    {
+        console.log(error);
+        process.exit(1);
+    }
+}
 
 // DEFINING MONGOOSE SCHEMA 
 const contactSchema = new mongoose.Schema({
@@ -64,8 +76,10 @@ app.post('/contact',(req,res)=>{
 })
 
 // START SERVER
-app.listen(port, ()=>{
-    console.log(`This application started successfully on port ${port}`);
+connectDB.then(()=>{
+    app.listen(port, ()=>{
+        console.log(`This application started successfully on port ${port}`);
+    })
 })
 
 
