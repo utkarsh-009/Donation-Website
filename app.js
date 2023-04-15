@@ -1,31 +1,15 @@
 // Importing external modules and initialising variables
-require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const app = express();
-const port = process.env.port || 3000;
+const port = 8000;
 const bodyparser = require('body-parser')
 const mongoose = require('mongoose');
-
-// To avoid unessecary warnings
-mongoose.set('strictQuery', false);
 
 // MONGOOSE SPECIFIC STUFF
 main().catch(err => console.log(err));
 // const connectionParams = {useNewUrlParser: true, useUnifiedTopology: true};
-// async function main() {await mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true}, {useUnifiedTopology: true});}
-
-const connectDB = async ()=>{
-    try {
-        const conn = await mongoose.connect(process.env.MONGO_URI);
-        console.log(`Mongoose DB connected: ${conn.connection.host}`);
-    }
-    catch(error)
-    {
-        console.log(error);
-        process.exit(1);
-    }
-}
+async function main() {await mongoose.connect('mongodb+srv://utkarshpatil2001:XoSxLRyp9iJeLy9L@cluster0.6driqbj.mongodb.net/formContacts', {useNewUrlParser: true}, {useUnifiedTopology: true});}
 
 // DEFINING MONGOOSE SCHEMA 
 const contactSchema = new mongoose.Schema({
@@ -76,12 +60,6 @@ app.post('/contact',(req,res)=>{
 })
 
 // START SERVER
-connectDB.then(()=>{
-    app.listen(port, ()=>{
-        console.log(`This application started successfully on port ${port}`);
-    })
+app.listen(port, ()=>{
+    console.log(`This application started successfully on port ${port}`);
 })
-
-
-
-// 'mongodb+srv://utkarshpatil2001:XoSxLRyp9iJeLy9L@cluster0.6driqbj.mongodb.net/formContacts'
