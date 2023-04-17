@@ -9,15 +9,16 @@ const mongoose = require('mongoose');
 
 
 // MONGOOSE SPECIFIC STUFF
-main().catch(err => console.log(err));
+
 async function main() {
-  await mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-  console.log("MongoDB Connected");
+    await mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
+    console.log("MongoDB Connected");
 }
 
+main().catch(err => console.log(err));
 
 
 // DEFINING MONGOOSE SCHEMA 
