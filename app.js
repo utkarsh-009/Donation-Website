@@ -7,20 +7,17 @@ const port = process.env.PORT || 8000;
 const bodyparser = require('body-parser')
 const mongoose = require('mongoose');
 
+
 // MONGOOSE SPECIFIC STUFF
 main().catch(err => console.log(err));
-// const connectionParams = {useNewUrlParser: true, useUnifiedTopology: true};
+async function main() {
+  await mongoose.connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+  console.log("MongoDB Connected");
+}
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/formContacts', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-const connection = mongoose.connection;
-
-connection.once('open', () => {
-  console.log('MongoDB database connection established successfully');
-});
 
 
 // DEFINING MONGOOSE SCHEMA 
