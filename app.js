@@ -9,15 +9,22 @@ const bodyparser = require('body-parser')
 
 
 // MONGOOSE SPECIFIC STUFF
-async function main() {
-    await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
-  }
-  
-  main().catch((err) => console.log(err));
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.MONGODB_URI);
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+}
 
+// START SERVER
+connectDB().then(() => {
+    app.listen(port, () => {
+        console.log(`This application started successfully on port ${port}`);
+    })
+})
 
 // DEFINING MONGOOSE SCHEMA 
 const contactSchema = new mongoose.Schema({
@@ -66,7 +73,3 @@ app.post('/contact',(req,res)=>{
 
 })
 
-// START SERVER
-app.listen(port, ()=>{
-    console.log(`This application started successfully on port ${port}`);
-})
