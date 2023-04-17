@@ -1,24 +1,22 @@
 // Importing external modules and initialising variables
 require('dotenv').config();
+const mongoose = require('mongoose');
 const express = require("express");
 const path = require("path");
 const app = express();
 const port = process.env.PORT || 8000;
 const bodyparser = require('body-parser')
-const mongoose = require('mongoose');
 
 
 // MONGOOSE SPECIFIC STUFF
-
 async function main() {
     await mongoose.connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
+      useNewUrlParser: true,
+      useUnifiedTopology: true
     });
-    console.log("MongoDB Connected");
-}
-
-main().catch(err => console.log(err));
+  }
+  
+  main().catch((err) => console.log(err));
 
 
 // DEFINING MONGOOSE SCHEMA 
