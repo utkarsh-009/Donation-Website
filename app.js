@@ -19,12 +19,6 @@ const connectDB = async () => {
     }
 }
 
-// START SERVER
-connectDB().then(() => {
-    app.listen(port, () => {
-        console.log(`This application started successfully on port ${port}`);
-    })
-})
 
 // DEFINING MONGOOSE SCHEMA 
 const contactSchema = new mongoose.Schema({
@@ -73,3 +67,9 @@ app.post('/contact',(req,res)=>{
 
 })
 
+// START SERVER
+connectDB().then(() => {
+    app.listen(port, () => {
+        console.log(`This application started successfully on port ${port}`);
+    })
+})
